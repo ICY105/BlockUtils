@@ -1,5 +1,5 @@
 # RedstoneUtils
-A Minecraft Datapack adding a smell collection of utilities for interecting with redstone. Currently handles:
+A Minecraft Datapack adding a small collection of utilities for interecting with redstone. Currently handles:
 * Getting a block's powered state
 
 ## Scoreboards
