@@ -1,5 +1,5 @@
 {
     "values": [
-		"#redstone_utils:load"
+		"#block_utils:load"
 	]
 }
