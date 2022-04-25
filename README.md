@@ -14,11 +14,11 @@ block_utils.data
 Function calls are called by you to trigger certian events or features.
 
 ```
-function redstone_utils:v1/api/is_active
+function block_utils:v1/api/is_active
   Call on a block to check if it is powered by redstone.
  
   Output:
-    #out redstone_utils.data: 0 for not powered, 1 for powered
+    #out block_utils.data: 0 for not powered, 1 for powered
 ```
 
 ## How to use
