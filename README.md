@@ -1,12 +1,12 @@
-# RedstoneUtils
-A Minecraft Datapack adding a small collection of utilities for interecting with redstone. Currently handles:
-* Getting a block's powered state
+# Block Utils
+A Minecraft Datapack adding a small collection of utilities for handeling some block interactions. Currently handles:
+* Getting a block's redstone powered state
 
 ## Scoreboards
 These are scoreboard objectives used to represent a value of some kind.
 
 ```
-redstone_utils.data
+block_utils.data
   Used for math and passing variables between functions.
 ```
 
@@ -23,6 +23,6 @@ function redstone_utils:v1/api/is_active
 
 ## How to use
 1. Install [LanternLoad](https://github.com/LanternMC/load) in your datapack, following its install directions
-2. Copy the `RedstoneUtils/data/redstone_utils` folder into your data pack
+2. Copy the `BlockUtils/data/block_utils` folder into your data pack
 3. Merge the file contents of `RedstoneUtils/data/load/tags/functions/*` into the files at `<your_datapack>/data/load/tags/functions/*`
 4. Implement the API as described above.
