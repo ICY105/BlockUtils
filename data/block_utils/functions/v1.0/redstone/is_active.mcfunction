@@ -4,32 +4,25 @@ scoreboard players set #temp block_utils.data 0
 #self powered
 function block_utils:v1.0/redstone/is_powered
 execute if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #out block_utils.data matches 1 run say self powered
 
 #other powered
 execute if score #temp block_utils.data matches 0 positioned ~ ~1 ~ unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say up
 
 execute if score #temp block_utils.data matches 0 positioned ~ ~-1 ~ unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say down
 
 execute if score #temp block_utils.data matches 0 positioned ~1 ~ ~ unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say +x
 
 execute if score #temp block_utils.data matches 0 positioned ~-1 ~ ~ unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say -x
 
 execute if score #temp block_utils.data matches 0 positioned ~ ~ ~1 unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say +y
 
 execute if score #temp block_utils.data matches 0 positioned ~ ~ ~-1 unless block ~ ~ ~ #block_utils:v1.0/transparent run function block_utils:v1.0/redstone/is_powered
 execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run scoreboard players set #temp block_utils.data 1
-execute if score #temp block_utils.data matches 0 if score #out block_utils.data matches 1 run say -y
 
 ### Self Active
 
