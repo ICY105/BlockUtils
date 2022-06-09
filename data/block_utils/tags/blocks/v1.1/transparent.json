@@ -1,6 +1,6 @@
 {
 	"values":[
-		"#block_utils:v1.0/pressure_plates",
+		"#block_utils:v1.1/pressure_plates",
 		
 		"#minecraft:leaves",
 		"#minecraft:banners",
@@ -12,7 +12,7 @@
 		"#minecraft:stairs",
 		"#minecraft:flower_pots",
 		"#minecraft:doors",
-		"#minecraft:carpets",
+		"#minecraft:wool_carpets",
 		"#minecraft:fences",
 		"#minecraft:campfires",
 		"#minecraft:beds",
@@ -125,6 +125,9 @@
 		"minecraft:glowstone",
 		"minecraft:sea_lantern",
 		"minecraft:piston_head",
+		"minecraft:sculk_shrieker",
+		"minecraft:sculk_vein",
+		"minecraft:sculk_sensor",
 		
 		"minecraft:glass",
 		"minecraft:white_stained_glass",
