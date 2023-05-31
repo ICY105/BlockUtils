@@ -15,7 +15,7 @@
 	  "condition": "minecraft:location_check",
 	  "predicate": {
 		"block": {
-		  "tag": "block_utils:v1.1/redstone_torch",
+		  "tag": "block_utils:v1.2/redstone_torch",
 		  "state": {
 			"lit": "true"
 		  }
