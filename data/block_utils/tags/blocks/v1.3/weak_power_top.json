@@ -1,7 +1,7 @@
 {
 	"values":[
 		"#minecraft:buttons",
-		"#block_utils:v1.2/pressure_plates",
+		"#block_utils:v1.3/pressure_plates",
 		"minecraft:lever",
 		"minecraft:detector_rail",
 		"minecraft:tripwire_hook",
