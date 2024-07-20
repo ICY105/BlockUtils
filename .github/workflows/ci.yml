@@ -1,0 +1,61 @@
+# This is a CI (continuous integration) workflow for Minecraft datapacks.
+# The purpose of CI is to try to catch bugs before they make it into a release.
+# If you are using Visual Studio Code, I suggest using SpyglassMC's language tools to do a similar thing. https://github.com/SpyglassMC/vscode-datapack
+# You can check out the indvidual actions on their respective GitHub pages.
+# For those who have used GitHub Actions before, notice how there is an extra complile and upload step.
+# This is due to how the build-main job checks for errors. Instead of using a script,
+# such as, /gradlew build, with this being a datapack, it checks the source files instead. (see Check commands and Check JSON.)
+
+name: CI
+on:
+  # Allows the workflow to be triggered by pushing or updating a PR, or manually triggered
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build-main:
+    runs-on: ubuntu-latest
+    # Only run on PRs if the source branch is on someone else's repo\
+    if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}  
+    steps:
+      # Clones repository so it has access to the files
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      # Checks mcfunction files for errors
+      - name: Check commands
+        uses: mcbeet/check-commands@v1
+        with:
+          source: .
+          minecraft: 1.19
+      # Checks JSON for errors
+      - name: Check JSON
+        uses: ocular-d/json-linter@0.0.2
+      # Uploads an artifact that you can download and use in your Minecraft world
+      - name: Compile and upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: BlockUtils v1.1
+          path: |
+               data/
+               pack.mcmeta
+               pack.png
+       # Errors if files aren't found
+          if-no-files-found: error
+  build-packsquash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run PackSquash
+        uses: ComunidadAylas/PackSquash-action@v3
+        with:
+          path: ./
+          token: ${{ secrets.GITHUB_TOKEN }}
+          minify_json_files: true
+          validate_pack_metadata_file: true
+          allow_optifine_mod: true
+          delete_bloat_json_keys: true
+          artifact_name: '[UNZIP ME] BlockUtils v1.1'
+  
